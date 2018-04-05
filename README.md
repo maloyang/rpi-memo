@@ -44,9 +44,41 @@ deb https://packagecloud.io/headmelted/codebuilds/raspbian/ jessie main
 sudo apt-get update
 sudo apt-get install code-oss
 
+## 若一開始沒有鍵盤、滑鼠時，要怎麼設定WiFi連線?
+- 把sd卡放到電腦裡，在"boot"的磁碟槽中新增一個 ""wpa_supplicant.conf""，內容如下：
+- 上電開機後，系統會把檔案剪走，放入系統的```/etc/wpa_supplicant/wpa_supplicant.conf```中，並啟用之
+- 只有ssid, psk好像就可以了，其它參數可能系統會自動判別吧(話說系統iwlist不就可以知道proto, key_mgmt, pairwise這些參數了，幹嘛要人輸入呢?)
+```
+country=TW
+ctrl_interface=DIR=/var/run/wpa_supplicantGROUP=netdev
+update_config=1
+network={
+    ssid="my-ap1"
+    psk="0123456789"
+    proto=RSN
+    key_mgmt=WPA-PSK
+    pairwise=CCMP
+}
+
+network={
+    ssid="my-ap2"
+    psk="9876543210"
+}
+```
 
 ### 剛裝完時空間狀況
-
+```
+pi@raspberrypi:~ $ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        15G  4.2G  9.6G  31% /
+devtmpfs        460M     0  460M   0% /dev
+tmpfs           464M     0  464M   0% /dev/shm
+tmpfs           464M   13M  452M   3% /run
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           464M     0  464M   0% /sys/fs/cgroup
+/dev/mmcblk0p1   42M   21M   21M  51% /boot
+tmpfs            93M     0   93M   0% /run/user/1000
+```
 
 ### 設定完環境, 裝完注音輸入法, vscode, miniconda3 後的空間狀況
 ```
