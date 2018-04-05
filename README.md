@@ -65,6 +65,17 @@ network={
     psk="9876543210"
 }
 ```
+### 若使用raspbian desktop設定網路，得到的設定檔內容如下：
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+        ssid="ICP DAS"
+        psk="icpdas888"
+        key_mgmt=WPA-PSK
+}
+```
 
 ### 剛裝完時空間狀況
 ```
