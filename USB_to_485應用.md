@@ -2,6 +2,11 @@
 ### 以Modbus/RTU控制PLC為例
 
 - 以下為程式範例, 主要由[這篇](https://github.com/maloyang/PLC-Python/blob/master/mb_demo1_mq.py)來的
+- 使用的是ch340晶片的USB轉RS485的裝置，[請見連結](http://shop.cpu.com.tw/product/47556/info/)
+- 插入USB設備後，會產生一個"/dev/ttyUSB0"的設備檔，因windows和linux下python程式都是相容的，因此我們只要把第19行改為"/dev/ttyUSB0"就可以了
+    - 如果執行時有錯誤，應該是你沒安裝modbus-tk, serial這二個套件，可以安裝如下：
+    - ```sudo pip install serial```
+    - ```sudo pip install modbus-tk```
 - 本來是在windows上的程式, 現在改為Linux環境執行, 感覺更穩定!
 
 ```
