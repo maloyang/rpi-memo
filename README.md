@@ -31,6 +31,23 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
 
 - 裝完後, 如果有設定 miniconda的python到.bashrc的話, 記得重登, 或重開就會生效
 
+### 安裝 jupyter @miniconda失敗
+- 原因是因為conda for armv7的prebuild套件好像沒有這一項
+
+### 安裝 flask
+- ```conda install flask``` 過程有安裝：
+```
+    flask:        0.10.1-py34_1
+    itsdangerous: 0.24-py34_0  
+    jinja2:       2.8-py34_0   
+    markupsafe:   0.23-py34_0  
+    pip:          7.1.2-py34_0 
+    setuptools:   18.1-py34_0  
+    werkzeug:     0.10.4-py34_0
+    wheel:        0.24.0-py34_0
+```
+
+
 ## install VSCode
 - install vscode (use pre-build package)
     - ref: https://www.raspberrypi.org/forums/viewtopic.php?t=191342
