@@ -122,3 +122,16 @@ tmpfs           464M     0  464M   0% /sys/fs/cgroup
 tmpfs            93M     0   93M   0% /run/user/1000
 ```
 
+### 裝完flask後的空間
+```
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        15G  4.9G  8.9G  36% /
+devtmpfs        460M     0  460M   0% /dev
+tmpfs           464M   54M  411M  12% /dev/shm
+tmpfs           464M   13M  452M   3% /run
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           464M     0  464M   0% /sys/fs/cgroup
+/dev/mmcblk0p1   42M   21M   21M  51% /boot
+tmpfs            93M     0   93M   0% /run/user/1000
+```
+
