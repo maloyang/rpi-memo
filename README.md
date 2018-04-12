@@ -49,6 +49,7 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
 
 
 ## install VSCode
+- before you run first command, you must do ```sudo apt-get update```, or you will fail when install GPG key
 - install vscode (use pre-build package)
     - ref: https://www.raspberrypi.org/forums/viewtopic.php?t=191342
     - install GPG key
