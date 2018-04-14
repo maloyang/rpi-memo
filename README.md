@@ -33,6 +33,7 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
 
 ### 安裝 jupyter @miniconda失敗
 - 原因是因為conda for armv7的prebuild套件好像沒有這一項
+- 後來改用內建的python3的pip3安裝jupyter notebook就沒問題了!
 
 ### 安裝 flask
 - ```conda install flask``` 過程有安裝：
@@ -61,6 +62,14 @@ deb https://packagecloud.io/headmelted/codebuilds/raspbian/ jessie main
     - update, and install (40M and install for 205MB)
 sudo apt-get update
 sudo apt-get install code-oss
+
+
+## 使用webcam
+- 參考這一篇[文章](https://www.raspberrypi.org/documentation/usage/webcams/)
+- 在插入USB webcam後，在產生一個 ```/dev/video0``` 的設備檔
+- 安裝 fswebcam ```sudo apt-get install fswebcam```
+- 下指令 ```fswebcam image.jpg``` 就可以由webcam照一張像下來了
+- 指令照片的解析度 ```fswebcam -r 640x480 image2.jpg```
 
 ## 若一開始沒有鍵盤、滑鼠時，要怎麼設定WiFi連線?
 - 把sd卡放到電腦裡，在"boot"的磁碟槽中新增一個 ""wpa_supplicant.conf""，內容如下：
