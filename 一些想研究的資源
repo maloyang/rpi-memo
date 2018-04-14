@@ -1,0 +1,37 @@
+## 一些想研究的資源
+
+- rpi zero w: PROGRAMMING OVER USB
+  - [PROGRAMMING OVER USB](https://blog.gbaman.info/?p=699)
+  - 試過，可惜在我的rpi zero w @win10 弄不起來
+  
+  
+- ESP with Rpi3
+  - [ESP with Rpi3](https://github.com/Wei1234c/Broccoli/blob/master/notebooks/demo/Broccoli_readme_tw.md)
+  
+- RPi3 : OpenCV + 水表
+  - [連結](https://www.raspberrypi.com.tw/17506/raspberry-pi-camera-python-opencv-2days-workshop-at-nfu/)
+  
+- 爬蟲：把食譜抓下來  
+  - [食譜圖片檔](http://www.wech.com.tw/breads/b01/23.html)
+  
+- RPi3 : IOT & Firebase
+  - [連結](https://www.appcoda.com.tw/swift-raspberry-pi/)
+
+- RPi3 : sensor and IOT
+  - [sensor with BluMix](https://oranwind.org/-raspberry-pi-tou-guo-python-chuan-song-wen-shi-du-zi-xun-dao-ibm-bluemix/)
+  - [sensor with AWS IOT](https://oranwind.org/-raspberry-pi-tou-guo-python-chuan-song-wen-shi-du-zi-xun-dao-aws-iot/)
+  
+  
+- RPi : 中華電信IOT平台
+  - [開發SDK](http://iot.cht.com.tw/iot/developer/download)
+  - [rpi demo](http://iot.cht.com.tw/iot/developer/resources/iot/download/DeviceConnMgt/Raspberry_Connect_IoT_Example.pdf)
+  
+- RPi, flask, 影像串流
+  - [link](http://hophd.com/raspberry-pi-python-flask-video-streaming/)
+  
+- RPi zero w: Raspberry Pi Zero打造「即插即用」的Web伺服器
+  - [link](http://www.ifuun.com/a2017119998299/)
+  
+- PiCommander Android App [link](http://www.codedata.com.tw/java/swz-09/)
+
+- [使用 Google 雲端硬碟 API，自動上傳圖片、進行文字辨識、下載結果](https://blog.gtwang.org/programming/automation-of-google-ocr-using-python-tutorial/)
