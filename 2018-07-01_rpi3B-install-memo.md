@@ -24,4 +24,40 @@ Successfully installed MarkupSafe-1.0 Send2Trash-1.5.0 backcall-0.1.0 bleach-2.1
 
   - use this command `jupyter-notebook` to run up your jupyter notebook
 
-- 
+- install micropython kernel
+  - mkdir micropython
+  - cd micropython
+  - git config --global user.name "Your Name"
+  - git config --global user.email email@example.com
+  - git clone git://github.com/maloyang/KHPY20180324
+  - git clone git://github.com/goatchurchprime/jupyter_micropython_kernel
+  - pip install -e jupyter_micropython_kernel
+  - install message:
+  `
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+Obtaining file:///home/pi/pyenv/my-jupyter-env/micropython/jupyter_micropython_kernel
+Collecting pyserial>=3.4 (from jupyter-micropython-kernel==0.1.3)
+  Downloading https://files.pythonhosted.org/packages/0d/e4/2a744dd9e3be04a0c0907414e2a01a7c88bb3915cbe3c8cc06e209f59c30/pyserial-3.4-py2.py3-none-any.whl (193kB)
+    100% |████████████████████████████████| 194kB 86kB/s 
+Collecting websocket-client>=0.44 (from jupyter-micropython-kernel==0.1.3)
+  Downloading https://files.pythonhosted.org/packages/8a/a1/72ef9aa26cfe1a75cee09fc1957e4723add9de098c15719416a1ee89386b/websocket_client-0.48.0-py2.py3-none-any.whl (198kB)
+    100% |████████████████████████████████| 204kB 111kB/s 
+Requirement already satisfied: six in /home/pi/pyenv/my-jupyter-env/lib/python3.5/site-packages (from websocket-client>=0.44->jupyter-micropython-kernel==0.1.3) (1.11.0)
+Installing collected packages: pyserial, websocket-client, jupyter-micropython-kernel
+  Running setup.py develop for jupyter-micropython-kernel
+Successfully installed jupyter-micropython-kernel pyserial-3.4 websocket-client-0.48.0  
+  `
+  - python -m jupyter_micropython_kernel.install
+  - install message:
+  `
+Installing IPython kernel spec of micropython
+...into /home/pi/.local/share/jupyter/kernels/micropython
+  `
+  - jupyter kernelspec list
+  `
+Available kernels:
+  micropython    /home/pi/.local/share/jupyter/kernels/micropython
+  python3        /home/pi/pyenv/my-jupyter-env/share/jupyter/kernels/python3  
+  `
+  
+  - ..
