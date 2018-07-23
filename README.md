@@ -104,6 +104,19 @@ network={
 }
 ```
 
+## 設定好wifi後, 要如何ssh連上rpi? 又不知道IP...
+
+- 參考[這篇](http://yehnan.blogspot.com/2015/12/raspberry-piip.html), 使用nmap去掃同網域的IP
+- sudo apt-get install nmap
+- nmap -sn 192.168.43.0/24
+    - 這樣是用ping的方式去掃
+- 是Windows與Mac OS X，可到[nmap.org](https://nmap.org/)下載nmap這支工具，也有圖形介面Zenmap
+- 另外, 也可以用fping去掃: fping -a -q -g 192.168.1.1 192.168.1.255
+- 掃到了, 可以這樣連:
+    - ssh pi@192.168.43.103
+- 如果不能連, 可能是sshd沒有開, 可以把rpi的sd取下, 在/boot槽中加入 "ssh" 這個檔案, 再重新開機 ssh 功能就會開啟了
+
+
 ### 剛裝完時空間狀況
 ```
 pi@raspberrypi:~ $ df -h
