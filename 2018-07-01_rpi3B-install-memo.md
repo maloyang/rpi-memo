@@ -65,6 +65,7 @@ Available kernels:
 
 ## jupyter notebook remote
 
+- generate config first: `jupyter notebook --generate-config`
 - use `jupyter notebook password` to config your password
 - run `jupyter notebook --no-browser --ip="*"` , you will access notebook local and remotely
 
