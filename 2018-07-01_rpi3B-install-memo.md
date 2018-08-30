@@ -68,3 +68,16 @@ Available kernels:
 - use `jupyter notebook password` to config your password
 - run `jupyter notebook --no-browser --ip="*"` , you will access notebook local and remotely
 
+----
+
+## install pandas
+
+active in my virtualenv for jupyter first
+
+- use `pip --no-cache-dir install pandas` to install, get it!
+
+```
+Installing collected packages: pytz, numpy, pandas
+Successfully installed numpy-1.15.1 pandas-0.23.4 pytz-2018.5
+```
+
