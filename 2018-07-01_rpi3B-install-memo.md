@@ -60,3 +60,11 @@ Available kernels:
   `
   
   - run jupyter-notebook, you will find "MicropPython -USB" option at your "new" button
+
+----
+
+## jupyter notebook remote
+
+- use `jupyter notebook password` to config your password
+- run `jupyter notebook --no-browser --ip="*"` , you will access notebook local and remotely
+
