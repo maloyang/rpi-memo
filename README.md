@@ -71,6 +71,19 @@ sudo apt-get install code-oss
 - 下指令 ```fswebcam image.jpg``` 就可以由webcam照一張像下來了
 - 指令照片的解析度 ```fswebcam -r 640x480 image2.jpg```
 
+## 若想要用電腦(win10)透過USB serial console和rpi0w通訊，來下指令控制rpi0w
+
+- ref: http://www.tal.org/tutorials/raspberry-pi-zero-usb-serial-console
+
+- 修改`BOOT/config.txt`檔，在結尾處加入`dtoverlay=dwc2`
+
+- 修改`BOOT/cmdline.txt`檔，在結尾處加入`modules-load=dwc2,g_serial`，內容如下：
+
+```
+dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=PARTUUID=72d5f72a-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait modules-load=dwc2,g_serial
+```
+
+
 ## 若一開始沒有鍵盤、滑鼠時，要怎麼設定WiFi連線?
 - 把sd卡放到電腦裡，在"boot"的磁碟槽中新增一個 ""wpa_supplicant.conf""，內容如下：
 - 上電開機後，系統會把檔案剪走，放入系統的```/etc/wpa_supplicant/wpa_supplicant.conf```中，並啟用之
