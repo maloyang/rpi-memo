@@ -74,6 +74,7 @@ sudo apt-get install code-oss
 ## 若想要用電腦(win10)透過USB serial console和rpi0w通訊，來下指令控制rpi0w
 
 - ref: http://www.tal.org/tutorials/raspberry-pi-zero-usb-serial-console
+- ref2: https://learn.adafruit.com/turning-your-raspberry-pi-zero-into-a-usb-gadget/serial-gadget
 
 - 修改`BOOT/config.txt`檔，在結尾處加入`dtoverlay=dwc2`
 
@@ -83,6 +84,9 @@ sudo apt-get install code-oss
 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=PARTUUID=72d5f72a-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait modules-load=dwc2,g_serial
 ```
 
+- 把sd卡放入rpi0w開機，再設定`sudo systemctl enable getty@ttyGS0.service`，之後重開機，下指令`sudo systemctl is-active getty@ttyGS0.service`看是否已active，如果是，就可以插上usb線，使用usb console連線了!
+
+(怪的是，你都no screen, keyboard, mouse了要怎麼開機下指令，所以這只適合在家先設定好，然後帶出門有個rpi linux的環境可以使用而已了… (若有人有更好的做法記得讓我知道一下，我linux也不是很熟…)
 
 ## 若一開始沒有鍵盤、滑鼠時，要怎麼設定WiFi連線?
 - 把sd卡放到電腦裡，在"boot"的磁碟槽中新增一個 ""wpa_supplicant.conf""，內容如下：
