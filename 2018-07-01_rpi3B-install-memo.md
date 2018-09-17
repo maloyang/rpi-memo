@@ -10,6 +10,7 @@
 
 - mkdir pyenv
 - cd pyenv/
+- if no pip3 --> `sudo apt-get install python3-pip`
 - sudo pip3 install virtualenv
 - virtualenv my-jupyter-env
 - cd my-jupyter-env/
