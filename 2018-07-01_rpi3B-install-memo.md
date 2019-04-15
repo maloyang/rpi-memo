@@ -97,3 +97,14 @@ Successfully installed numpy-1.15.1 pandas-0.23.4 pytz-2018.5
 - `pip freeze > requirements.txt`
 - for next project, install all packages one time: `pip install -r path/to/requirements.txt`
 
+## auto-run your program after desktop load
+ref: https://www.raspberrypi-spy.co.uk/2014/05/how-to-autostart-apps-in-rasbian-lxde-desktop/
+
+- edit `~/.config/lxsession/LXDE/autostart` , to add my autorun.sh script `/home/pi/autorun.sh`
+- other NG for me
+  - `sudo nano /etc/xdg/lxsession/LXDE-pi/autostart` to add my autorun.sh
+  - ref. this one: https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/
+    - `sudo nano /etc/rc.local` not work
+    - `sudo nano /home/pi/.bashrc` not good for me, it will run program after i open a terminal
+    - use init.d `sudo update-rc.d sample.py defaults` --> usually it will be ok in my other linux platform, but fail in pi.. I don't know what's happend.
+    
