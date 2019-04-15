@@ -83,3 +83,11 @@ Installing collected packages: pytz, numpy, pandas
 Successfully installed numpy-1.15.1 pandas-0.23.4 pytz-2018.5
 ```
 
+----
+
+## install anydesk for remote operation
+
+- download: https://anydesk.org/en/downloads/raspberry-pi
+- install command: `sudo dpkg -i anydesk_2.9.4-1_armhf.deb`
+
+
