@@ -95,4 +95,5 @@ Successfully installed numpy-1.15.1 pandas-0.23.4 pytz-2018.5
 
 ## export your requirements.txt file for next rpi3 project
 - `pip freeze > requirements.txt`
+- for next project, install all packages one time: `pip install -r path/to/requirements.txt`
 
