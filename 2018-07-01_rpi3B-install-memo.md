@@ -91,3 +91,8 @@ Successfully installed numpy-1.15.1 pandas-0.23.4 pytz-2018.5
 - install command: `sudo dpkg -i anydesk_2.9.4-1_armhf.deb`
 
 
+----
+
+## export your requirements.txt file for next rpi3 project
+- `pip freeze > requirements.txt`
+
