@@ -108,13 +108,13 @@ ref: https://www.raspberrypi-spy.co.uk/2014/05/how-to-autostart-apps-in-rasbian-
     - `sudo nano /home/pi/.bashrc` not good for me, it will run program after i open a terminal
     - use init.d `sudo update-rc.d sample.py defaults` --> usually it will be ok in my other linux platform, but fail in pi.. I don't know what's happend.
     
-## open chrome after boot
+## open chrome after boot (for ubuntu desktop version)
 - use command `google-chrome "your-url" --start-maximized`
 - add file `my_chrome.desktop` in `~/.config/autostart/`, with content below:
 ```
 [Desktop Entry]
 Comment=Autostart chrome with my url
-Exec=google-chrome "http://ecoglisten.ipvita.net/InstantPower.aspx?YoNF9qenkcDpfTSA3auc4w&lang=traditional_chinese" --start-maximized
+Exec=google-chrome "http://your-url" --start-maximized
 Name=chrome-start
 OnlyShowIn=LXQt
 Type=Application
