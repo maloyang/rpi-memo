@@ -120,3 +120,94 @@ OnlyShowIn=LXQt
 Type=Application
 Version=1.0
 ```
+
+----
+## for some hardware component
+### hardware config
+- Buzzer
+- RS-485
+- RTC
+
+#### Buzzer
+- `sudo apt install python3-gpiozero`
+- `nano ~/buzzer2.py`, code as :
+```
+from gpiozero import Buzzer
+import time
+
+print('start')
+buzzer = Buzzer(4)
+
+print('ON')
+buzzer.on()
+time.sleep(0.1)
+print('OFF')
+buzzer.off()
+```
+
+- `nano ~/buzzer-off.sh`
+```
+#!/bin/bash
+
+python /home/pi/buzzer2.py
+```
+
+- `sudo nano /etc/rc.local` , add as below before `exit 0` --> let it autostart @ boot
+```
+# init. and OFF buzzer
+/home/pi/buzzer-off.sh &
+```
+
+### RS-485 --> /dev/ttyS0
+- `sudo nano /boot/config.txt`, append a line at end:
+```
+enable_uart=1
+```
+- after reboot, system will has `dev/ttyS0`
+
+- 因為boot command中預設serial0 (也就是/dev/ttyS0)為 console，所以要 `sudo nano /boot/cmdline.txt`，把console設定到別處，如下 console=tty1
+```
+dwc_otg.lpm_enable=0 console=tty1 root=PARTUUID=f4e31847-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
+```
+
+- 設定好後，重新開機，可以用以下的程式進行測試
+```
+import serial
+
+# function to check serial data
+
+def check_serial_data(mbComPort='/dev/ttyUSB0'):
+    port = serial.Serial(mbComPort, 9600, timeout=1)
+    with port as s:
+        data = s.read(1024)
+        print(len(data), '> ', data)
+
+        print('write:')
+        s.write('abcd\n')
+
+    return len(data)
+    
+
+
+while True:
+    check_serial_data()
+```
+
+### RTC, 
+
+- `nano rtc-set.sh`
+```
+sudo modprobe i2c-bcm2708
+
+echo ds3231 0x68 | sudo tee /sys/class/i2c-adapter/i2c-1/new_device
+sudo hwclock
+
+# system time --> RTC
+sudo hwclock -w
+sudo hwclock
+
+# when boot, RTC-->system time
+#sudo update-rc.d ntp disable
+#sudo update-rc.d fake-hwclock disable
+
+```
