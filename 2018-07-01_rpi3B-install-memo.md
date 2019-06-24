@@ -194,6 +194,8 @@ while True:
 ```
 
 ### RTC, 
+- use `sudo raspi-config` to enable i2c bus
+enable "5 Localisation Options" / "p5 I2C"
 
 - `nano rtc-set.sh`
 ```
@@ -209,5 +211,10 @@ sudo hwclock
 # when boot, RTC-->system time
 #sudo update-rc.d ntp disable
 #sudo update-rc.d fake-hwclock disable
+```
 
+- add two line into `/etc/rc.local` before `exit 0`
+```
+echo ds3231 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
+sudo hwclock -s
 ```
