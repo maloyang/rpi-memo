@@ -194,8 +194,7 @@ while True:
 ```
 
 ### RTC, 
-- ~~use `sudo raspi-config` to enable i2c bus
-~~enable "5 Localisation Options" / "p5 I2C"
+- ~~use `sudo raspi-config` to enable i2c bus, enable "5 Localisation Options" / "p5 I2C"~~
 
 - must click `startup` icon, "Preferences"/"Raspberry Pi Configuration", click "interfaces" page, enable "I2C"
 
