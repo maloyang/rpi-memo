@@ -170,7 +170,7 @@ enable_uart=1
 dwc_otg.lpm_enable=0 console=tty1 root=PARTUUID=f4e31847-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
 ```
 
-- 設定好後，重新開機，可以用以下的程式進行測試
+- 設定好後，重新開機，可以用以下的程式進行測試 `nano rs485qc.py`
 ```
 import serial
 
@@ -183,7 +183,7 @@ def check_serial_data(mbComPort='/dev/ttyUSB0'):
         print(len(data), '> ', data)
 
         print('write:')
-        s.write('abcd\n')
+        s.write('abcd\r\n')
 
     return len(data)
     
@@ -194,8 +194,10 @@ while True:
 ```
 
 ### RTC, 
-- use `sudo raspi-config` to enable i2c bus
-enable "5 Localisation Options" / "p5 I2C"
+- ~~use `sudo raspi-config` to enable i2c bus
+~~enable "5 Localisation Options" / "p5 I2C"
+
+- must click `startup` icon, "Preferences"/"Raspberry Pi Configuration", click "interfaces" page, enable "I2C"
 
 - `nano rtc-set.sh`
 ```
