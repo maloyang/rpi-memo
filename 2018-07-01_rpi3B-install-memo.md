@@ -224,3 +224,39 @@ sudo hwclock -s
  - https://github.com/ThomasVandenabeele/rp-adns3080
  - use arduino: https://github.com/ThomasVandenabeele/rp-adns3080/blob/master/report-zhang-vandenabeele.pdf
  
+### auto-run by /etc/init.d/ script
+- ref: https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/
+- `sudo nano /etc/init.d/auto_run.sh`, content as below:
+```
+#!/bin/sh
+# Start/Stop your program
+#
+### BEGIN INIT INFO
+# Provides:          fw
+# Required-Start:    $remote_fs $syslog $time
+# Required-Stop:     $remote_fs $syslog $time
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: fw
+# Description:       run fw.
+### END INIT INFO
+
+
+case "$1" in
+start)
+        echo "start fw"
+        # command to run your program
+	;;
+stop)
+        echo "stop fw"
+        #commnad to stop your program
+        ;;
+restart)
+        $0 stop
+        $0 start
+        ;;
+esac
+exit 0
+```
+- `sudo chmod +x auto_run.sh`
+- `sudo update-rc.d auto_run.sh defaults`
