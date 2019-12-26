@@ -9,10 +9,22 @@
 ## 設定
 這台電腦主要是用來做程式開發的，以下是我剛開始預計會用的工具
 
-- VSCode
-- Line
 - Anaconda
-- office
-- pdf viewer
+  - 到anaconda官網下載：Anaconda3-2019.10-Linux-x86_64.sh
+  - 執行`bash Anaconda3-2019.10-Linux-x86_64.sh`
+  - 照著裝完就ok
+- VSCode
+  - 上面的裝完就會有了
 - Jupyter
+  - 上面的裝完就會有了
+- office
+  - 自帶的libra office就可以了
+- pdf viewer
+  - 自帶的就ok, 但我更想用pdf xchange
+  - [看這邊](https://wiki.ubuntu-tw.org/index.php?title=PDF_Xchange_viewer)，先裝wine再裝windows版的pdf xchange
+- Line
+  - chrome的Line外掛（我裝第二次才正常，不知怎麼了)
+  - [這邊裝](https://chrome.google.com/webstore/detail/line/menkifleemblimdogmoihpfopnplikde?hl=zh-TW)
 - colab環境
+  - 晚點寫，其實不用裝啥
+- keras
