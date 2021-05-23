@@ -30,7 +30,19 @@ code = qrcode.make('Hello world!')
 code.save('qr)
 ```
 
-- 用cv2抓camera上的qrcode
+### 用cv2抓camera上的qrcode
+- 安裝需要的package
+```
+sudo apt-get install python3-opencv
+
+sudo apt-get install libqt4-test python3-sip python3-pyqt5 libqtgui4 libjasper-dev libatlas-base-dev -y
+
+pip3 install opencv-contrib-python==4.1.0.25
+
+sudo modprobe bcm2835-v4l2
+```
+
+- 建立檔案qr_scan.py，用指令`nano qr_scan.py`，再用`python3 qr_scan.py`就可以用camera來掃QRCode了
 ```
 import cv2
 
