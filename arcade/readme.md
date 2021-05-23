@@ -1,5 +1,22 @@
 # qrcode: 產生＆讀取
 
+## 測試csi camera
+- 取一張照片：`raspistill -o image.jpg`
+- 錄一段影片：`raspivid -o viedeo.h264`
+- 用程式測試
+  - sudo apt install python-picamera
+  - 新增 first_cam.py
+```
+import picamera
+
+with picamera.PiCamera() as camera:
+    camera.start_preview()
+    camera.capture('./py-image.jpg')
+    camera.stop_preview()
+```
+  - `python3 first_cam.py`
+
+
 ## 產生
 
 - [這篇有提到產生qrcode](https://www.hackster.io/gatoninja236/scan-qr-codes-in-real-time-with-raspberry-pi-a5268b)
