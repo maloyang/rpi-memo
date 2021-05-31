@@ -19,3 +19,49 @@
 - 錄影3秒: `raspivid -o test.h264 -t 3000`
 - 如果都可以再自己的home目錄下看到照片、影片，那表示基礎建設都ok囉
 
+## 臉部辨識1: [ref](https://www.oursteam.com.tw/view-news.php?id=111)
+- 先參考這邊安裝相依套件: [ref](https://gist.github.com/mrpjevans/9885e853b603ed046cbc5326b9942991)
+- 安裝相依套件:
+```
+sudo apt install build-essential \
+    cmake \
+    gfortran \
+    git \
+    wget \
+    curl \
+    graphicsmagick \
+    libgraphicsmagick1-dev \
+    libatlas-base-dev \
+    libavcodec-dev \
+    libavformat-dev \
+    libboost-all-dev \
+    libgtk2.0-dev \
+    libjpeg-dev \
+    liblapack-dev \
+    libswscale-dev \
+    pkg-config \
+    python3-dev \
+    python3-numpy \
+    python3-pip \
+    zip
+    python3-picamera
+```
+- 更新picamera --> 我做了，但好像沒必要
+- `sudo pip3 install --upgrade picamera`
+- 把swap加大: `sudo nano /etc/dphys-swapfile`
+- 找到 `CONF_SWAPSIZE` 把100改為1024
+- 重啟swap設定，讓他生效 `sudo /etc/init.d/dphys-swapfile restart`
+- Build and install dlib (聽說這步驟再rpi4要30分鐘，rpi3就....)
+```
+git clone -b 'v19.6' --single-branch https://github.com/davisking/dlib.git
+cd ./dlib
+sudo python3 setup.py install --compiler-flags "-mfpu=neon"
+```
+- 安裝到這邊，我們就可以開始安裝我們最需要的模組了: `sudo pip3 install face_recognition`
+
+### 來跑我們的程式囉!
+- 下載程式 `git clone --single-branch https://github.com/ageitgey/face_recognition.git`
+- 進到example資料夾: `cd face_recognition/example`
+- 執行程式: `python3 facerec_on_raspberry_pi.py`
+- 這樣就可以採用基於一張照片的人臉辨識了!
+
