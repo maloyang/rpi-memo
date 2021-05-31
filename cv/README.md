@@ -73,3 +73,7 @@ sudo python3 setup.py install --compiler-flags "-mfpu=neon"
 
 ## 另一個重點是~~ 這個project可以在mac, linux上跑 --> 晚點再來試試看
 
+----
+## 另外，補充
+- [ref](https://www.slideshare.net/raspberrypi-tw/raspberry-pi-camera-and-opencv-day2): sosorry 的picamera & cv 介紹
+- 
