@@ -16,8 +16,11 @@
 
 ## 測試camera
 - 拍張照片: `raspistill -v -o test.jpg`
+  - 3秒後拍照，輸出格式為640x480的png檔 `raspistill -t 3000 -o test.png -e png -w 640 -h 480`
 - 錄影3秒: `raspivid -o test.h264 -t 3000`
+    - 以640x480解析度錄影10秒 `raspivid -t 10000 -w 640 -h 480 -o video.h264`
 - 如果都可以再自己的home目錄下看到照片、影片，那表示基礎建設都ok囉
+
 
 ## 臉部辨識1: [ref](https://www.oursteam.com.tw/view-news.php?id=111)
 - 先參考這邊安裝相依套件: [ref](https://gist.github.com/mrpjevans/9885e853b603ed046cbc5326b9942991)
@@ -64,4 +67,9 @@ sudo python3 setup.py install --compiler-flags "-mfpu=neon"
 - 進到example資料夾: `cd face_recognition/example`
 - 執行程式: `python3 facerec_on_raspberry_pi.py`
 - 這樣就可以採用基於一張照片的人臉辨識了!
+
+### real-time face recognition: `facerec_from_webcam_faster.py` (faster這一個會把以1/4的大小處理，速度才夠快，不然rasp4也很難跟上)
+
+
+## 另一個重點是~~ 這個project可以在mac, linux上跑 --> 晚點再來試試看
 
