@@ -26,3 +26,15 @@ pip3 install sqlalchemy
 ## 用2021-05-07的image
 
 ... coming soon ...
+
+
+## for PC @2021-03-04 image
+# cv package
+pip install opencv-python
+pip install mediapipe
+pip install pyzbar
+# 中文字處理
+pip install freetype-py
+# 安裝 pymssql
+pip install pymssql
+pip install sqlalchemy
